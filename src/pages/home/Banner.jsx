@@ -10,7 +10,15 @@ import img6 from "../../assets/home/06.png";
 const Banner = () => {
   return (
     <div>
-      <Carousel>
+      <Carousel
+        autoPlay={true} // Enables autoPlay
+        interval={3000} // Slide interval in milliseconds
+        infiniteLoop={true} // Enables infinite looping
+        showThumbs={false} // Hides thumbnails
+        showArrows={true} // Shows navigation arrows
+        showStatus={false}
+        stopOnHover={true} // Hides slide status
+      >
         <div>
           <img src={img1} />
         </div>
