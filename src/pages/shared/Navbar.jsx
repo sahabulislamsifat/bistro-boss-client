@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar fixed z-10 bg-opacity-5 text-white bg-gray-700 max-w-screen-xl mx-auto">
+      <div className="navbar fixed z-10 bg-opacity-50 text-white bg-gray-700 max-w-screen-xl mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -44,7 +44,7 @@ const Navbar = () => {
             <h2 className="btn btn-ghost rounded-sm text-2xl lg:text-3xl text-blue-600">
               Bistro Boss
             </h2>
-            <p className="text-xs ml-4">
+            <p className="text-xs ml-4 italic">
               "Streamline Your Service, Savor Success!"
             </p>
           </div>
