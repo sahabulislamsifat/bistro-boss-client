@@ -2,6 +2,7 @@ import React from "react";
 import Banner from "./Banner";
 import Category from "./Category";
 import PopularMenu from "./PopularMenu";
+import Featured from "./featured/Featured";
 
 const Home = () => {
   return (
@@ -12,7 +13,8 @@ const Home = () => {
       <Category></Category>
       {/* Menu Items  */}
       <PopularMenu></PopularMenu>
-      <h2>This is Home.......</h2>
+      {/* Featured Section  */}
+      <Featured></Featured>
     </div>
   );
 };
