@@ -13,7 +13,7 @@ const Featured = () => {
         <div>
           <img src={featuredImage} alt="featured image" />
         </div>
-        <div className="md:ml-8 text-blue-400">
+        <div className="md:ml-8 text-yellow-400">
           <p>Jan 08, 2025</p>
           <p className="uppercase">where can i get some?</p>
           <p>

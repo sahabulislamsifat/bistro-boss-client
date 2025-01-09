@@ -25,8 +25,8 @@ const Navbar = () => {
         to={item.path}
         className={({ isActive }) =>
           `${className} ${
-            isActive ? "text-blue-600 font-semibold" : "text-gray-200"
-          } hover:text-blue-500 border-none transition duration-500`
+            isActive ? "text-yellow-600 font-semibold" : "text-gray-200"
+          } hover:text-yellow-500 border-none transition duration-500`
         }
       >
         {item.label}
@@ -69,15 +69,15 @@ const Navbar = () => {
         {/* Logo */}
         <div>
           <h1 className="text-xl md:text-2xl">
-            <span className="font-bold text-blue-600 lg:text-3xl hover:text-blue-500 transition-all duration-300">
+            <span className="font-bold text-yellow-500 lg:text-3xl hover:text-yellow-600 transition-all duration-300">
               Bistro
             </span>
             <span className=" lg:text-3xl font-semibold transition-all duration-300">
               Boss
             </span>
           </h1>
-          <p className="text-xs lg:text-sm">
-            "Resonating Voices, Inspiring Change."
+          <p className="text-xs italic">
+            "Streamline Your Service, Savor Success!"
           </p>
         </div>
       </div>
@@ -135,7 +135,7 @@ const Navbar = () => {
       <div className="navbar-end">
         <NavLink
           to="/auth/sign-in"
-          className="btn bg-blue-600 rounded-sm transition-all duration-300 hover:bg-blue-500 text-white btn-sm border-none"
+          className="btn bg-yellow-500 rounded-sm transition-all duration-300 hover:bg-yellow-600 text-white btn-sm border-none"
         >
           Join Now
         </NavLink>
