@@ -1,60 +1,144 @@
-import React from "react";
+import { useContext } from "react";
+import { NavLink, Link } from "react-router-dom";
 
 const Navbar = () => {
-  const navOptions = (
-    <>
-      <li>
-        <a>Item 1</a>
-      </li>
-      <li>
-        <a>Item 3</a>
-      </li>
-    </>
-  );
+  // const { user, logOut } = useContext();
+
+  const handleLogout = async () => {
+    try {
+      // await logOut();
+      toast.success("Log out Successful");
+    } catch (error) {
+      toast.error(`Error during logout: ${error.message}`);
+    }
+  };
+
+  const navItems = [
+    { path: "/", label: "Home" },
+    { path: "/menu", label: "Menu" },
+  ];
+
+  const NavLinks = ({ className }) =>
+    navItems.map((item) => (
+      <NavLink
+        key={item.path}
+        to={item.path}
+        className={({ isActive }) =>
+          `${className} ${
+            isActive ? "text-blue-600 font-semibold" : "text-gray-200"
+          } hover:text-blue-500 border-none transition duration-500`
+        }
+      >
+        {item.label}
+      </NavLink>
+    ));
 
   return (
-    <div>
-      <div className="navbar fixed z-10 bg-opacity-50 text-white bg-gray-700 max-w-screen-xl mx-auto">
-        <div className="navbar-start">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
+    <div className="navbar fixed z-10 bg-opacity-50 text-white bg-gray-700 max-w-screen-xl mx-auto">
+      {/* Navbar Start */}
+      <div className="navbar-start">
+        {/* Dropdown for Mobile */}
+        <div className="dropdown">
+          <button
+            tabIndex={0}
+            className="btn btn-ghost lg:hidden"
+            aria-label="Open Menu"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </button>
+          <ul
+            tabIndex={0}
+            className="menu dropdown-content mt-2 z-[1] w-32 space-y-1 rounded-sm"
+          >
+            <NavLinks className="btn btn-xs rounded-sm bg-opacity-50 bg-black" />
+          </ul>
+        </div>
+        {/* Logo */}
+        <div>
+          <h1 className="text-xl md:text-2xl">
+            <span className="font-bold text-blue-600 lg:text-3xl hover:text-blue-500 transition-all duration-300">
+              Bistro
+            </span>
+            <span className=" lg:text-3xl font-semibold transition-all duration-300">
+              Boss
+            </span>
+          </h1>
+          <p className="text-xs lg:text-sm">
+            "Resonating Voices, Inspiring Change."
+          </p>
+        </div>
+      </div>
+      {/* Navbar Center */}
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal gap-4 px-1">
+          <NavLinks className={"btn btn-xs rounded-sm bg-transparent"} />
+        </ul>
+      </div>
+      {/* Navbar End */}
+      {/* <div className="navbar-end">
+        {user ? (
+          <div className="dropdown dropdown-end">
+            <button
+              tabIndex={0}
+              className="btn btn-ghost btn-circle avatar"
+              aria-label="User Menu"
+            >
+              <div className="w-10 rounded-full">
+                <img
+                  alt="User Avatar"
+                  src={user?.photoURL || "default-avatar.png"}
                 />
-              </svg>
-            </div>
+              </div>
+            </button>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-sm w-52 p-2 gap-1"
             >
-              {navOptions}
+              <li className="btn btn-xs rounded-sm border-none">
+                {user.displayName}
+              </li>
+              <li className="btn btn-xs rounded-sm border-none">
+                {user.email}
+              </li>
+              <li>
+                <Link
+                  onClick={handleLogout}
+                  className="bg-red-600 btn pb-3 btn-xs border-none w-full text-white hover:bg-red-700 rounded-sm"
+                >
+                  Logout
+                </Link>
+              </li>
             </ul>
           </div>
-          <div>
-            <h2 className="btn btn-ghost rounded-sm text-2xl lg:text-3xl text-blue-600">
-              Bistro Boss
-            </h2>
-            <p className="text-xs ml-4 italic">
-              "Streamline Your Service, Savor Success!"
-            </p>
-          </div>
-        </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{navOptions}</ul>
-        </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
-        </div>
+        ) : (
+          <NavLink
+            to="/auth/sign-in"
+            className="btn bg-indigo-600 rounded-sm transition-all duration-300 hover:bg-indigo-500 text-white btn-sm border-none"
+          >
+            Join Now
+          </NavLink>
+        )}
+      </div> */}
+      <div className="navbar-end">
+        <NavLink
+          to="/auth/sign-in"
+          className="btn bg-blue-600 rounded-sm transition-all duration-300 hover:bg-blue-500 text-white btn-sm border-none"
+        >
+          Join Now
+        </NavLink>
       </div>
     </div>
   );

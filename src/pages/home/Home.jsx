@@ -4,10 +4,14 @@ import Category from "./Category";
 import PopularMenu from "./PopularMenu";
 import Featured from "./featured/Featured";
 import Testimonials from "./Testimonials";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   return (
     <div>
+      <Helmet>
+        <title>Bistro Boss Restaurant || Home</title>
+      </Helmet>
       {/* Carousal Banner  */}
       <Banner></Banner>
       {/* Category Swiper  */}
