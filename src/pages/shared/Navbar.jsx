@@ -15,7 +15,10 @@ const Navbar = () => {
 
   const navItems = [
     { path: "/", label: "Home" },
-    { path: "/menu", label: "Menu" },
+    { path: "/contact", label: "Contact Us" },
+    { path: "/dashboard", label: "Dashboard" },
+    { path: "/menu", label: "Our Menu" },
+    { path: "/order", label: "Order Food" },
   ];
 
   const NavLinks = ({ className }) =>
