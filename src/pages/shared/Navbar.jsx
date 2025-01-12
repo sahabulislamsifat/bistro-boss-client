@@ -37,7 +37,7 @@ const Navbar = () => {
     ));
 
   return (
-    <div className="navbar fixed z-10 bg-opacity-50 text-white bg-gray-700 max-w-screen-xl mx-auto">
+    <div className="navbar fixed top-0 z-40 bg-opacity-50 text-white bg-gray-700 max-w-screen-xl mx-auto">
       {/* Navbar Start */}
       <div className="navbar-start">
         {/* Dropdown for Mobile */}
@@ -137,10 +137,10 @@ const Navbar = () => {
       </div> */}
       <div className="navbar-end">
         <NavLink
-          to="/auth/sign-in"
+          to="/login"
           className="btn bg-yellow-500 rounded-sm transition-all duration-300 hover:bg-yellow-600 text-white btn-sm border-none"
         >
-          Join Now
+          Login
         </NavLink>
       </div>
     </div>
