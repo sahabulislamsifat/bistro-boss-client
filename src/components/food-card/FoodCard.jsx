@@ -2,18 +2,20 @@ const FoodCard = ({ item }) => {
   const { name, image, price, recipe } = item;
 
   return (
-    <div className="card bg-base-100 w-96 shadow-xl">
+    <div className="card w-96 shadow-md rounded-md">
       <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-          alt="Shoes"
-        />
+        <img src={image} alt="food" />
       </figure>
-      <div className="card-body">
-        <h2 className="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
+      <p className="absolute mr-4 right-0 bg-slate-600 text-white px-4 py-1 mt-3 rounded-sm">
+        ${price}
+      </p>
+      <div className="card-body flex">
+        <h2 className="card-title">{name}</h2>
+        <p>{recipe}</p>
+        <div className="card-actions">
+          <button className=" font-semibold mx-auto btn w-3/5 py-3 mt-3 bg-gray-700 hover:bg-gray-800 text-white rounded-md">
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>

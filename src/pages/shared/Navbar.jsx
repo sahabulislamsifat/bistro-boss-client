@@ -18,7 +18,7 @@ const Navbar = () => {
     { path: "/contact", label: "Contact Us" },
     { path: "/dashboard", label: "Dashboard" },
     { path: "/menu", label: "Our Menu" },
-    { path: "/order", label: "Order Food" },
+    { path: "/order/salad", label: "Order Food" },
   ];
 
   const NavLinks = ({ className }) =>
